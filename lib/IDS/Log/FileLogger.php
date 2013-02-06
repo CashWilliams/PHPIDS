@@ -206,6 +206,18 @@ class FileLogger implements LoggerInterface
                 }
             }
 
+            // Let's try to create this file if it doesn't exist
+            if(touch($this->logfile)) {
+                if (is_writable($this->logfile)) {
+                    return file_put_contents($this->logfile, trim($data) . "\n", FILE_APPEND);
+                } else {
+                    throw new \Exception(
+                            'Please make sure that ' . $this->logfile .
+                            ' is writeable.'
+                            );
+                }
+            }
+
             throw new \InvalidArgumentException(
                 sprintf('Given file %s does not exist. Please make sure the logfile is present in the given directory.',
                         $this->logfile)

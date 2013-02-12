@@ -101,7 +101,7 @@ class Storage
             $caching      = isset($init->config['Caching']['caching']) ? $init->config['Caching']['caching'] : 'none';
 
             $type         = $init->config['General']['filter_type'];
-            $this->source = $init->getBasePath(). $init->config['General']['filter_path'];
+            $this->source = $init->config['General']['filter_path'];
 
             if ($caching && $caching !== 'none') {
                 $this->cacheSettings = $init->config['Caching'];

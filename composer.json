@@ -10,7 +10,8 @@
         }
     ],
     "require": {
-        "ezyang/htmlpurifier": "dev-master"
+        "ezyang/htmlpurifier": "dev-master",
+        "phpunit/phpunit": "3.7.10"
     },
     "autoload": {
         "psr-0": {

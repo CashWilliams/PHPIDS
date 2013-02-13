@@ -150,17 +150,17 @@ class FileLogger implements LoggerInterface
         $attackedParameters = '';
         foreach ($data as $event) {
             $attackedParameters .= $event->getName() . '=' .
-                rawurlencode($event->getValue()) . ' ';
+                $event->getValue() . ' ';
         }
 
         $dataString = sprintf(
             $format,
-            urlencode($this->ip),
+            $this->ip,
             date('c'),
             $data->getImpact(),
             join(' ', $data->getTags()),
-            urlencode(trim($attackedParameters)),
-            urlencode($_SERVER['REQUEST_URI']),
+            trim($attackedParameters),
+            $_SERVER['REQUEST_URI'],
             $_SERVER['SERVER_ADDR']
         );
 

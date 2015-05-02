@@ -127,12 +127,23 @@ class MemcachedCache implements CacheInterface
     public function setCache(array $data)
     {
         if (!$this->isCached) {
-            $this->memcache->set(
-                $this->config['key_prefix'] . '.storage',
-                $data,
-                false,
-                $this->config['expiration_time']
-            );
+            if (get_class($this->memcache) === 'Memcached') {
+                $this->memcache->set(
+                    $this->config['key_prefix'] . '.storage',
+                    $data,
+                    $this->config['expiration_time']
+                );
+            } else {    // 'Memcache'
+                $this->memcache->set(
+                    $this->config['key_prefix'] . '.storage',
+                    $data,
+                    false,
+                    $this->config['expiration_time']
+                );
+            }
+            
+            
+            
         }
 
         return $this;
@@ -168,11 +179,21 @@ class MemcachedCache implements CacheInterface
 
         if ($this->config['host'] && $this->config['port']) {
             // establish the memcache connection
-            $this->memcache = new \Memcache;
-            $this->memcache->pconnect(
-                $this->config['host'],
-                $this->config['port']
-            );
+            if (class_exists('Memcached', FALSE))
+    		{
+    			$this->memcache = new \Memcached;
+    			$this->memcache->addServer(
+    			    $this->config['host'],
+    			    $this->config['port'], 1
+    			);
+    		} else {
+    			$this->memcache = new \Memcache;
+                $this->memcache->pconnect(
+                    $this->config['host'],
+                    $this->config['port']
+                );
+    		}
+            
 
         } else {
             throw new \Exception('Insufficient connection parameters');

@@ -3,10 +3,10 @@
 [General]
     filter_type     = xml
 
-    base_path       = ../../lib/IDS/
+    base_path       = ../../src/IDS/
     use_base_path   = false
 
-    filter_path     = ../../lib/IDS/default_filter.xml
+    filter_path     = ../../src/IDS/default_filter.xml
     tmp_path        = /tmp
     scan_keys       = false
 

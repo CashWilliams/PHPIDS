@@ -13,7 +13,7 @@ foreach ($GLOBALS as $name => $value) {
     }
 
     /** Make absolute path */
-    if (substr($value, 0, 4) === 'lib/') {
+    if (substr($value, 0, 4) === 'src/') {
         $value = realpath(__DIR__ . '/../../..') . '/' . $value;
     }
 

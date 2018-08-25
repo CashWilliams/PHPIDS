@@ -16,7 +16,7 @@
 
     <filter>
         <whitelist addUncoveredFilesFromWhitelist="true">
-            <directory suffix=".php">./lib</directory>
+            <directory suffix=".php">./src</directory>
         </whitelist>
     </filter>
 
@@ -28,11 +28,11 @@
     </logging>
     <php>
         <var name="IDS_TEMP_DIR" value="/tmp"/>
-        <var name="IDS_CONFIG" value="lib/IDS/Config/Config.ini.php"/>
+        <var name="IDS_CONFIG" value="src/IDS/Config/Config.ini.php"/>
         <var name="IDS_FILTER_CACHE_FILE" value="/tmp/default_filter.cache"/>
         <var name="IDS_FILTER_TYPE" value="xml"/>
-        <var name="IDS_FILTER_SET" value="lib/IDS/default_filter.xml"/>
-        <var name="IDS_FILTER_SET_XML" value="lib/IDS/default_filter.xml"/>
-        <var name="IDS_FILTER_SET_JSON" value="lib/IDS/default_filter.json"/>
+        <var name="IDS_FILTER_SET" value="src/IDS/default_filter.xml"/>
+        <var name="IDS_FILTER_SET_XML" value="src/IDS/default_filter.xml"/>
+        <var name="IDS_FILTER_SET_JSON" value="src/IDS/default_filter.json"/>
     </php>
 </phpunit>

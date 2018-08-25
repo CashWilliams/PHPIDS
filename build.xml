@@ -12,7 +12,7 @@
 			output="Html:frames:default"
 			defaultpackagename="PHPIDS"
 			defaultcategoryname="PHPIDS">
-			<fileset dir="lib">
+			<fileset dir="src">
 				<include name="**/*.php"/>
 			</fileset>
 		</phpdoc>
@@ -33,7 +33,7 @@
         description="Create release tarball and checksums. Use -Drelease.version=&lt;version&gt;"/>
 
     <target name="release.version" if="release.version">
-        <replace dir="lib/IDS" value="&quot;${release.version}&quot;">
+        <replace dir="src/IDS" value="&quot;${release.version}&quot;">
             <include name="Version.php"/>
             <replacetoken>'master'</replacetoken>
         </replace>

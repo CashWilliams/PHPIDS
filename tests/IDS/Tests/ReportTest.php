@@ -98,7 +98,7 @@ class ReportTest extends TestCase
 
     public function testToString()
     {
-        $this->assertEquals(preg_match('/Total impact: 10/', $this->report->__toString()),1);
+        $this->assertEquals(preg_match('/\<strong\>Total impact:\<\/strong\> 10/', $this->report->__toString()),1);
     }
 
     public function testToStringEmpty()

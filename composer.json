@@ -10,7 +10,7 @@
         }
     ],
     "require": {
-        "ezyang/htmlpurifier": "dev-master"
+        "ezyang/htmlpurifier": "4.6.*"
     },
     "autoload": {
         "psr-0": {

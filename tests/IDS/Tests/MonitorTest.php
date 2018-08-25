@@ -1353,7 +1353,7 @@ class MonitorTest extends TestCase
         $result = $test->run($exploits);
 
         $this->assertFalse($result->hasEvent(1));
-        $this->assertEquals(711, $result->getImpact());
+        $this->assertEquals(737, $result->getImpact());
     }
 
     public function testAllowedHTMLScanningNegative()

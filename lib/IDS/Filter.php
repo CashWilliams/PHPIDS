@@ -89,7 +89,7 @@ class Filter
      *
      * @return \IDS\Filter
      */
-    public function __construct($id, $rule, $description, array $tags, $impact)
+    public function __construct($id, $rule, $description, array $tags, int $impact)
     {
         $this->id          = $id;
         $this->rule        = $rule;

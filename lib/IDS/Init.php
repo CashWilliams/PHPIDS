@@ -65,6 +65,13 @@ class Init
     private static $instances = array();
 
     /**
+     * Base path of config file
+     *
+     * @var string
+     */
+    protected static $basePath;
+
+    /**
      * Constructor
      *
      * Includes needed classes and parses the configuration file
@@ -89,17 +96,27 @@ class Init
      */
     public static function init($configPath = null)
     {
+
         if (!$configPath) {
             return new self();
         }
+
         if (!isset(self::$instances[$configPath])) {
             if (!file_exists($configPath) || !is_readable($configPath)) {
                 throw new \InvalidArgumentException("Invalid config path '$configPath'");
             }
+
+            $configFile = new \SplFileInfo($configPath);
+            self::$basePath = $configFile->getPath();
+
             self::$instances[$configPath] = new static(parse_ini_file($configPath, true));
         }
 
         return self::$instances[$configPath];
+    }
+
+    public function getBaseConfigPath() {
+        return self::$basePath;
     }
 
     /**

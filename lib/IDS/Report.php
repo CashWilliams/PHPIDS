@@ -267,7 +267,7 @@ class Report implements \Countable, \IteratorAggregate
     }
 
     /**
-     * Directly outputs all available information
+     * Directly outputs all available information in HTML.
      *
      * @return string
      */
@@ -276,7 +276,7 @@ class Report implements \Countable, \IteratorAggregate
         $output = '';
         if (!$this->isEmpty()) {
             $output .= vsprintf(
-                "Total impact: %d<br/>\nAffected tags: %s<br/>\n",
+                "<strong>Total impact:</strong> %d<br/>\n<strong>Affected tags:</strong> %s<br/>\n",
                 array(
                     $this->getImpact(),
                     implode(', ', $this->getTags())
@@ -285,7 +285,7 @@ class Report implements \Countable, \IteratorAggregate
 
             foreach ($this->events as $event) {
                 $output .= vsprintf(
-                    "<br/>\nVariable: %s | Value: %s<br/>\nImpact: %d | Tags: %s<br/>\n",
+                    "<br/>\n<strong>Variable:</strong> %s <br/>\n <strong>Value:</strong> %s<br/>\n<strong>Impact:</strong> %d <br/>\n <strong>Tags:</strong> %s<br/>\n",
                     array(
                         htmlspecialchars($event->getName()),
                         htmlspecialchars($event->getValue()),
@@ -296,7 +296,7 @@ class Report implements \Countable, \IteratorAggregate
 
                 foreach ($event as $filter) {
                     $output .= vsprintf(
-                        "Description: %s | Tags: %s | ID %s<br/>\n",
+                        "<strong>Description:</strong> %s | Tags: %s | ID %s<br/>\n",
                         array(
                             $filter->getDescription(),
                             implode(', ', $filter->getTags()),

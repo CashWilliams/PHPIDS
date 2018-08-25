@@ -54,7 +54,7 @@ class FilterSetTest extends TestCase
 
     public function testRegularExpressionsMatch()
     {
-#        $this->assertSame(count($this->jsonFilter), count($this->xmlFilter));
+#       $this->assertSame(count($this->jsonFilter), count($this->xmlFilter));
 
         foreach ($this->jsonFilter as $pos => $filter) {
             $this->assertFiltersMatch($filter, $this->xmlFilter[$pos]);

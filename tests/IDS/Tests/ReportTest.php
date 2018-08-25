@@ -21,8 +21,9 @@ namespace IDS\Tests;
 use IDS\Report;
 use IDS\Event;
 use IDS\Filter;
+use PHPUnit\Framework\TestCase;
 
-class ReportTest extends \PHPUnit_Framework_TestCase
+class ReportTest extends TestCase
 {
     /**
      * @var Report

@@ -21,8 +21,9 @@ namespace IDS\Tests;
 use IDS\Filter;
 use IDS\Filter\Storage;
 use IDS\Init;
+use PHPUnit\Framework\TestCase;
 
-class FilterTest extends \PHPUnit_Framework_TestCase
+class FilterTest extends TestCase
 {
     /**
      * @var Init

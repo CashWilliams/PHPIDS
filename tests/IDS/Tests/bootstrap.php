@@ -1,7 +1,6 @@
 <?php
 require_once __DIR__.'/../../../vendor/autoload.php';
 
-
 $config = array();
 foreach ($GLOBALS as $name => $value) {
     if (strpos($name, 'IDS_') !== 0) {

@@ -21,11 +21,12 @@ namespace IDS\Tests;
 use IDS\Monitor;
 use IDS\Init;
 use IDS\Report;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @large
  */
-class MonitorTest extends \PHPUnit_Framework_TestCase
+class MonitorTest extends TestCase
 {
     /**
      * @var Init

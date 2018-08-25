@@ -20,8 +20,9 @@ namespace IDS\Tests;
 
 use IDS\Event;
 use IDS\Filter;
+use PHPUnit\Framework\TestCase;
 
-class EventTest extends \PHPUnit_Framework_TestCase
+class EventTest extends TestCase
 {
     /**
      * @var Event

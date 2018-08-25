@@ -19,8 +19,9 @@
 namespace IDS\Tests;
 
 use IDS\Init;
+use PHPUnit\Framework\TestCase;
 
-class InitTest extends \PHPUnit_Framework_TestCase
+class InitTest extends TestCase
 {
     /**
      * @var \IDS\Init

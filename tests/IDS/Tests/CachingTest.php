@@ -22,8 +22,9 @@ use IDS\Init;
 use IDS\Caching\CacheFactory;
 use IDS\Caching\FileCache;
 use IDS\Caching\SessionCache;
+use PHPUnit\Framework\TestCase;
 
-class CachingTest extends \PHPUnit_Framework_TestCase
+class CachingTest extends TestCase
 {
     /**
      * @var Init

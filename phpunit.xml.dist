@@ -3,8 +3,6 @@
          convertErrorsToExceptions="true"
          convertWarningsToExceptions="true"
          convertNoticesToExceptions="true"
-         mapTestClassNameToCoveredClassName="true"
-         strict="true"
          verbose="true"
          colors="true"
          timeoutForLargeTests="100"
@@ -25,9 +23,6 @@
     <logging>
         <log type="coverage-html"
             target="docs/coverage/"
-            charset="UTF-8"
-            yui="true"
-            highlight="true"
             lowUpperBound="60"
             highLowerBound="80" />
     </logging>

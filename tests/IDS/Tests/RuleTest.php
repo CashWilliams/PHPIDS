@@ -20,8 +20,9 @@ namespace IDS\Tests;
 
 use IDS\Init;
 use IDS\Monitor;
+use PHPUnit\Framework\TestCase;
 
-class RuleTest extends \PHPUnit_Framework_TestCase
+class RuleTest extends TestCase
 {
     /**
      * @var Init

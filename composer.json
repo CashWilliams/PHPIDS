@@ -10,7 +10,8 @@
         }
     ],
     "require": {
-        "ezyang/htmlpurifier": "4.6.*"
+        "ezyang/htmlpurifier": "4.6.*",
+        "phpunit/phpunit": "3.7.10"
     },
     "autoload": {
         "psr-0": {
